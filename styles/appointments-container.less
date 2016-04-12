@@ -1,0 +1,95 @@
+/**
+ * APPOINTMENTS-CONTAINER
+ */
+ 
+ @color_1: #FF5722;
+ @color_2: #009688;
+ @color_3: #9C27B0;
+ 
+ .appointments-container {
+    margin: 1rem 0 4rem 0;
+    
+    .appointment-card {
+        //background-color: red;
+        width: 250px;
+        margin: 0 15px;
+        
+        &__title {
+            span {
+                font-size: 1.2rem;
+            }
+            
+            padding: 15px 10px;
+        }
+        
+        &__content {
+            padding: 0;
+            padding-top: 20px;
+            
+            p {
+                padding: 10px;
+            }
+        }
+        &__actions {
+            display: block;
+            padding: 0;
+            margin: 10px 0;
+            
+            > [md-button] {
+                width: 100%;
+                color: #F5F5F5;
+                background: red;
+                font-weight: bold;
+                padding: 5px 0;
+                border-radius: 0;
+            }
+        }
+    }
+    
+    &__nav {
+        font-size: 4em;
+        background-color: #FAFAFA;
+        > [md-icon] {
+            color: #757575;   
+        }
+        &:hover {
+            background-color: #EEEEEE!important;
+        }
+    }
+    
+    &__list {        
+        md-card:nth-of-type(1) {
+             .appointment-card__title {
+                span {
+                    color: @color_1;
+                }
+             }
+            
+            .appointment-card__actions > [md-button] {
+                background: @color_1;
+            }
+        }
+        md-card:nth-of-type(2) {
+             .appointment-card__title {
+                span {
+                    color: @color_2;
+                }
+             }
+            
+            .appointment-card__actions > [md-button] {
+                background: @color_2;
+            }
+        }
+        md-card:nth-of-type(3) {
+             .appointment-card__title {
+                span {
+                    color: @color_3;
+                }
+             }
+            
+            .appointment-card__actions > [md-button] {
+                background: @color_3;
+            }
+        }
+    }
+ }

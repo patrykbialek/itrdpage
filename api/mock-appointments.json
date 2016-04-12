@@ -1,0 +1,270 @@
+{
+    "data": [
+        {
+            "appointmentId": 1,
+            "appointmentDate": "10/03/2016",
+            "startTime": "8:55",
+            "personId": 1,
+            "person": {
+                "personId": 1,
+                "firstName": "Patryk",
+                "lastName": "Białek",
+                "mrn": 166136,
+                "personIdentificationNo": "76071801954",
+                "passportNo": null,
+                "dateOfBirth": "1976-07-18"
+            },
+            "consultationRoomId": 1,
+            "consultationRoom": {
+                "consultationRoomId": 1,
+                "name": "1"
+            },
+            "clinicId": 1,
+            "clinic": {
+                "clinicId": 1,
+                "name": "Warszawa CM Aleje Jerozolimskie"
+            },
+            "doctorId": 1,
+            "doctor": {
+                "employeeId": 1,
+                "firstName": "Anna",
+                "lastName": "Otto"
+            },
+            "specialtyId": 1,
+            "specialty": {
+                "specialtyId": 1,
+                "name": "Okulista dorośli"
+            },
+            "isPaid": true,
+            "isExtra": true
+        },
+        {
+            "appointmentId": 2,
+            "appointmentDate": "10/03/2016",
+            "startTime": "14:55",
+            "personId": 1,
+            "person": {
+                "personId": 1,
+                "firstName": "Patryk",
+                "lastName": "Białek",
+                "mrn": 166136,
+                "personIdentificationNo": "76071801954",
+                "passportNo": null,
+                "dateOfBirth": "1976-07-18"
+            },
+            "consultationRoomId": 5,
+            "consultationRoom": {
+                "consultationRoomId": 5,
+                "name": "5"
+            },
+            "clinicId": 1,
+            "clinic": {
+                "clinicId": 1,
+                "name": "Warszawa CM Aleje Jerozolimskie"
+            },
+            "doctorId": 1,
+            "doctor": {
+                "employeeId": 1,
+                "firstName": "Jarosław",
+                "lastName": "Mrozek"
+            },
+            "specialtyId": 1,
+            "specialty": {
+                "specialtyId": 1,
+                "name": "Internista"
+            },
+            "isPaid": false,
+            "isExtra": false
+        },
+        {
+            "appointmentId": 3,
+            "appointmentDate": "10/03/2016",
+            "startTime": "18:30",
+            "personId": 1,
+            "person": {
+                "personId": 1,
+                "firstName": "Patryk",
+                "lastName": "Białek",
+                "mrn": 166136,
+                "personIdentificationNo": "76071801954",
+                "passportNo": null,
+                "dateOfBirth": "1976-07-18"
+            },
+            "consultationRoomId": 23,
+            "consultationRoom": {
+                "consultationRoomId": 23,
+                "name": "23"
+            },
+            "clinicId": 1,
+            "clinic": {
+                "clinicId": 1,
+                "name": "Warszawa CM Aleje Jerozolimskie"
+            },
+            "doctorId": 1,
+            "doctor": {
+                "employeeId": 1,
+                "firstName": "Paweł",
+                "lastName": "Gaweł"
+            },
+            "specialtyId": 1,
+            "specialty": {
+                "specialtyId": 1,
+                "name": "Pediatara-dzieci chore"
+            },
+            "isPaid": false,
+            "isExtra": false
+        },
+        {
+            "appointmentId": 4,
+            "appointmentDate": "10/03/2016",
+            "startTime": "14:55",
+            "personId": 1,
+            "person": {
+                "personId": 1,
+                "firstName": "Patryk",
+                "lastName": "Białek",
+                "mrn": 166136,
+                "personIdentificationNo": "76071801954",
+                "passportNo": null,
+                "dateOfBirth": "1976-07-18"
+            },
+            "consultationRoomId": 1,
+            "consultationRoom": {
+                "consultationRoomId": 1,
+                "name": "1"
+            },
+            "clinicId": 1,
+            "clinic": {
+                "clinicId": 1,
+                "name": "Warszawa CM Aleje Jerozolimskie"
+            },
+            "doctorId": 1,
+            "doctor": {
+                "employeeId": 1,
+                "firstName": "Jarosław",
+                "lastName": "Mrozek"
+            },
+            "specialtyId": 1,
+            "specialty": {
+                "specialtyId": 1,
+                "name": "Pediatara-dziecichore"
+            },
+            "isPaid": false,
+            "isExtra": true
+        },
+        {
+            "appointmentId": 5,
+            "appointmentDate": "10/03/2016",
+            "startTime": "14:55",
+            "personId": 6,
+            "person": {
+                "personId": 6,
+                "firstName": "Urszula",
+                "lastName": "Marszko",
+                "mrn": 36060,
+                "personIdentificationNo": "76071801954",
+                "passportNo": null,
+                "dateOfBirth": "1976-07-18"
+            },
+            "consultationRoomId": 11,
+            "consultationRoom": {
+                "consultationRoomId": 11,
+                "name": "11"
+            },
+            "clinicId": 1,
+            "clinic": {
+                "clinicId": 1,
+                "name": "Warszawa CM Aleje Jerozolimskie"
+            },
+            "doctorId": 1,
+            "doctor": {
+                "employeeId": 1,
+                "firstName": "Janusz",
+                "lastName": "Buczek"
+            },
+            "specialtyId": 1,
+            "specialty": {
+                "specialtyId": 1,
+                "name": "Alergolog dorośli"
+            },
+            "isPaid": false,
+            "isExtra": true
+        },
+        {
+            "appointmentId": 6,
+            "appointmentDate": "10/03/2016",
+            "startTime": "11:15",
+            "personId": 2,
+            "person": {
+                "personId": 2,
+                "firstName": "Monika",
+                "lastName": "Sharp",
+                "mrn": 2005,
+                "personIdentificationNo": "72053101540",
+                "passportNo": "pass2005",
+                "dateOfBirth": "1972-05-31"
+            },
+            "consultationRoomId": 3,
+            "consultationRoom": {
+                "consultationRoomId": 3,
+                "name": "3"
+            },
+            "clinicId": 1,
+            "clinic": {
+                "clinicId": 1,
+                "name": "Warszawa CM Aleje Jerozolimskie"
+            },
+            "doctorId": 1,
+            "doctor": {
+                "employeeId": 1,
+                "firstName": "Jacek",
+                "lastName": "Stępień"
+            },
+            "specialtyId": 1,
+            "specialty": {
+                "specialtyId": 1,
+                "name": "USG stopy"
+            },
+            "isPaid": false,
+            "isExtra": false
+        },
+        {
+            "appointmentId": 7,
+            "appointmentDate": "10/03/2016",
+            "startTime": "14: 55",
+            "personId": 5,
+            "person": {
+                "personId": 5,
+                "firstName": "Franciszek",
+                "lastName": "Białek",
+                "mrn": 740501,
+                "personIdentificationNo": null,
+                "passportNo": "bialek740501",
+                "dateOfBirth": "2005-06-09"
+            },
+            "consultationRoomId": 4,
+            "consultationRoom": {
+                "consultationRoomId": 4,
+                "name": "4"
+            },
+            "clinicId": 1,
+            "clinic": {
+                "clinicId": 1,
+                "name": "Warszawa CM Aleje Jerozolimskie"
+            },
+            "doctorId": 1,
+            "doctor": {
+                "employeeId": 1,
+                "firstName": "Maria",
+                "lastName": "Stefańczuk-Kowalewska"
+            },
+            "specialtyId": 1,
+            "specialty": {
+                "specialtyId": 1,
+                "name": "Pediatara-dzieci chore"
+            },
+            "isPaid": false,
+            "isExtra": false
+        }
+    ]
+}

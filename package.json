@@ -1,0 +1,44 @@
+{
+  "name": "itrd",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" \"npm run watch-less\"",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "typings": "typings",
+    "postinstall": "typings install",
+    "less:dev": "lessc styles/styles.less .tmp/styles.css",
+    "less:prd": "lessc --clean-css styles/styles.less styles/styles.css",
+    "watch-less": "nodemon --watch styles/**/*.less --ext less --exec 'npm run less:dev'"
+  },
+  "jshintConfig": {
+    "esnext": "true",
+    "noyield": "true"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "angular2": "2.0.0-beta.14",
+    "angular2-moment": "^0.4.3",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.35.0",
+    "less": "^2.6.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "moment": "^2.12.0",
+    "ng2-material": "^0.2.10",
+    "ng2-translate": "^1.10.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "0.19.22",
+    "tslint": "^3.5.0",
+    "zone.js": "0.6.6"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.1.0",
+    "nodemon": "^1.9.1",
+    "typescript": "^1.8.2",
+    "typings": "^0.6.8",
+    "watch": "^0.17.1"
+  }
+}

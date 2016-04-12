@@ -1,0 +1,15 @@
+<section class="team-detail">
+
+    <md-button class="md-icon-button team-detail--close" (click)="goBack()">
+        <md-icon class="material-icons" style="font-size: 50px; color: grey; cursor: pointer;">close</md-icon>
+    </md-button>
+
+    <div class="person" flex="35" *ngIf="person">
+        <figure class="person__photo md-whiteframe-5dp" [ngStyle]="{'background': 'url(images/team_photos/' + person.photo +') no-repeat'}"></figure>
+        <h2 class="person__name">{{person.name}} {{hid}}</h2>
+        <h4 class="person__position">{{person.position}}</h4>
+        <p class="person__workbio">{{person.workbio}}</p>
+        <p class="person__homebio">{{person.homebio}}</p>
+    </div>
+    
+</section>

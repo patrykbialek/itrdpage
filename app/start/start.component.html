@@ -1,0 +1,21 @@
+<section class="section" (window:scroll)="onScroll($event)">
+    <div class="section-title bg-indigo md-whiteframe-7dp">
+        <h1 style="padding-top:8rem;" [ngClass]="{'hidden': isHidden}">IT Research & Development<br>
+        <span style="font-size: 0.5em;    line-height: 2.5rem;">
+            <img src="images/medicover_logo_white.png" alt="logo" style="width:40px;vertical-align:text-bottom;">
+Medicover Group</span></h1>
+    </div>
+
+    <div class="section-body" layout="row" layout-align="space-around center">
+        <div class="section-description" flex="60">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime voluptatum, facere. Numquam repudiandae ullam
+                cumque, dolorum pariatur, a voluptas iure totam, sint tempora velit minus fugiat? Cumque, ex mollitia architecto.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, perferendis illo! Eligendi nostrum itaque,
+                alias pariatur animi veritatis corporis minus quia! Consequatur quia commodi sunt nostrum necessitatibus,
+                alias, sed nulla!
+            </p>
+
+            <a class="link" [routerLink]="['Story']">show me more</a>
+        </div>
+    </div>
+</section>

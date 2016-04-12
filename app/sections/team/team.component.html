@@ -1,0 +1,33 @@
+<section class="section" (window:scroll)="onScroll($event)">
+    <div class="section-title bg-red md-whiteframe-7dp">
+        <h1 [ngClass]="{'hidden': isHidden}">{{title}}</h1>
+    </div>
+
+    <div class="section-body" layout="row" layout-align="space-around center">
+        <div class="section-icon" style="width:45%; text-align: center;">
+            <md-icon class="material-icons">group</md-icon>
+        </div>
+        <div class="section-description" style="width:45%">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime voluptatum, facere. Numquam repudiandae ullam
+                cumque, dolorum pariatur, a voluptas iure totam, sint tempora velit minus fugiat? Cumque, ex mollitia architecto.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, perferendis illo! Eligendi nostrum itaque,
+                alias pariatur animi veritatis corporis minus quia! Consequatur quia commodi sunt nostrum necessitatibus,
+                alias, sed nulla!
+            </p>
+
+            <a class="link" (click)="gotoTeam()">Meet our team</a>
+        </div>
+    </div>
+    <h3 class="team-list-title">Our Team</h3>
+    <ul class="team-list" layout="row" layout-align="center center" layout-wrap>
+        <li class="team-list__item" flex="25" *ngFor="#person of people" (click)="gotoDetail(person)">
+            <figure class="person-photo md-whiteframe-5dp" [ngStyle]="{'background': 'url(images/team_photos/' + person.photo +') no-repeat'}">
+            </figure>
+            <h2 class="person-name">{{person.name}}</h2>
+            <h4 class="person-position">{{person.position}}</h4>
+        </li>
+    </ul>
+    <modal-confirm></modal-confirm>
+
+    <itrd-team-detail [hidden]="!visible" [(detailHidden)]="detailHidden" [ngClass]="{'detail-hidden': !visible}"></itrd-team-detail>
+</section>

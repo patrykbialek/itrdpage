@@ -1,0 +1,61 @@
+<!doctype>
+<html>
+
+<head>
+    <base href="/">
+
+    <title>IT Research&Development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    
+    <link rel="stylesheet" href="node_modules/ng2-material/dist/ng2-material.css">
+    <link rel="stylesheet" href="node_modules/ng2-material/dist/font.css">
+    <link rel="stylesheet" href=".tmp/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/ng2-translate/bundles/ng2-translate.js"></script>
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            defaultJSExtensions: true,
+            packages: {
+                "/angular2": {"defaultExtension": false},
+                "api": {"defaultExtension": "ts"}
+            },
+            map: {
+                'ng2-translate': 'node_modules/ng2-translate',
+                'rxjs': 'node_modules/rxjs'
+            }
+        });
+        System.import('app/main')
+            .then(null, console.error.bind(console));
+    </script>
+
+    <!--<script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>-->
+</head>
+
+<!-- 3. Display the application -->
+
+<body>
+    <itrd-app></itrd-app>
+</body>
+
+</html>
+
+<!--
+Copyright 2016 Medicover Group IT R&D. All Rights Reserved.
+-->

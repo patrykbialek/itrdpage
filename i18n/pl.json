@@ -1,0 +1,34 @@
+{
+    "Language_name": "English",
+    "Welcome_to_sci": "Witamy w systemie odznaczania wizyt",
+    "Section_titles": {
+        "Choose_login_method": "Wybierz metodę logowania",
+        "Enter_mrn_number": "Podaj numer karty Medicover",
+        "Enter_pesel_number": "Podaj numer PESEL",
+        "Enter_passport_number": "Podaj numer paszportu",
+        "Choose_visit_to_confirm": "Wybierz wizytę, którą chcesz potwierdzić"
+    },
+    "Menu_items": {
+        "Mrn": "KARTA MEDICOVER",
+        "Pesel": "PESEL",
+        "Passport": "PASZPORT"
+    },
+    "Messages": {
+        "No_person_found": "Nie mamy takiej osoby w bazie danych.",
+        "No_appointment_found": "Nie masz umówionych wizyt. <br> Proszę podejść do recepcji Centrum.",
+        "Visit_is_paid": "Zakres Twojego pakietu medycznego wymaga weryfikacji. <br>Proszę podejść do recepcji Centrum.",
+        "Visit_is_confirmed": "Przejdź pod gabinet lekarski i przygotuj dokument tożsamości.<br> Lekarz zaprosi Cię do gabinetu.",
+        "Visit_is_extra": "Jest to wizyta dodatkowa, więc czas oczekiwania może być dłuższy.",
+        "Welcome": "Witaj",
+        "Your_mrn_is": "Twój numer karty Medicover to"
+    },
+    "Buttons": {
+        "Back": "COFNIJ",
+        "Cancel": "ANULUJ",
+        "Next_visit": "NASTĘPNA WIZYTA",
+        "Logout": "WYLOGUJ"
+    },
+    "Confirm_visit": "POTWIERDŹ",
+    "Room": "Gabinet",
+    "Time": "Godzina"
+}

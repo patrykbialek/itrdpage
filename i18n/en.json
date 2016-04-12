@@ -1,0 +1,34 @@
+{
+    "Language_name": "Polski",
+    "Welcome_to_sci": "Welcome to self check-in system",
+    "Section_titles": {
+        "Choose_login_method": "Select login method",
+        "Enter_mrn_number": "Enter Medicover card number",
+        "Enter_pesel_number": "Enter PESEL number",
+        "Enter_passport_number": "Enter passport number",
+        "Choose_visit_to_confirm": "Select appointment to confirm"
+    },
+    "Menu_items": {
+        "Mrn": "MEDICOVER CARD",
+        "Pesel": "PESEL",
+        "Passport": "PASSPORT"
+    },
+    "Messages": {
+        "No_person_found": "No person found in database.",
+        "No_appointment_found": "You have no appointment to confirm. <br> Please go to reception.",
+        "Visit_is_paid": "Your Benefit Plan needs to be verified. <br> Please got to reception.",
+        "Visit_is_confirmed": "Please go to consultation room and prepare document ID for verification. <br>Doctor will call you.",
+        "Visit_is_extra": "This is an extra appointment, it could take longer than usually.",
+        "Welcome": "Welcome",
+        "Your_mrn_is": "Your Medicover card number is"
+    },
+    "Buttons": {
+        "Back": "BACK",
+        "Cancel": "CANCEL",
+        "Next_visit": "NEXT VISIT",
+        "Logout": "LOGOUT"
+    },
+    "Confirm_visit": "CONFIRM",
+    "Room": "Room",
+    "Time": "Time"
+}

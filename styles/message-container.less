@@ -1,0 +1,29 @@
+/**
+ * MESSAGE-CONTAINER
+ */
+
+.message-container {
+    margin: 4rem 0;
+    @font_size_message: 2rem;
+    
+    > * {
+        text-align: center;
+        line-height: 2;
+    }
+    
+    .message--success {
+        color: #009688;
+        font-size: @font_size_message;
+    }
+    .message--failed {
+        color: #F44336;
+        font-size: @font_size_message;
+    }
+    
+    &__patient-data {
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1;
+        margin: 5px 0;
+    }
+}
