@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translate'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translate', '../../data/data'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, ng2_translate_1;
+    var core_1, router_1, ng2_translate_1, data_1;
     var WorksComponent;
     return {
         setters:[
@@ -22,11 +22,14 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
             },
             function (ng2_translate_1_1) {
                 ng2_translate_1 = ng2_translate_1_1;
+            },
+            function (data_1_1) {
+                data_1 = data_1_1;
             }],
         execute: function() {
-            //import { ClientDetailComponent }  from './client-detail.component';
             WorksComponent = (function () {
-                function WorksComponent() {
+                function WorksComponent(_applicationService) {
+                    this._applicationService = _applicationService;
                     this.title = 'Our Works';
                     this.isHidden = false;
                 }
@@ -38,6 +41,31 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
                         this.isHidden = false;
                     }
                 };
+                WorksComponent.prototype.getApplications = function () {
+                    var _this = this;
+                    this._applicationService.getApplictions().then(function (applications) { return _this.applications = applications; });
+                };
+                WorksComponent.prototype.gotoWorks = function () {
+                    var duration = 600;
+                    var element = document.body;
+                    var to = 780;
+                    scrollTo(element, to, duration);
+                    function scrollTo(element, to, duration) {
+                        if (duration < 0)
+                            return;
+                        var difference = to - element.scrollTop;
+                        var perTick = difference / duration * 15;
+                        setTimeout(function () {
+                            element.scrollTop = element.scrollTop + perTick;
+                            if (element.scrollTop === to)
+                                return;
+                            scrollTo(element, to, duration - 15);
+                        }, 15);
+                    }
+                };
+                WorksComponent.prototype.ngOnInit = function () {
+                    this.getApplications();
+                };
                 WorksComponent = __decorate([
                     core_1.Component({
                         selector: 'itrd-works',
@@ -45,7 +73,7 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
                         directives: [router_1.ROUTER_DIRECTIVES],
                         pipes: [ng2_translate_1.TranslatePipe]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [data_1.ApplicationService])
                 ], WorksComponent);
                 return WorksComponent;
             }());

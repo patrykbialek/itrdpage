@@ -32,7 +32,6 @@ export class TeamComponent implements OnInit {
         this._personService.getPeople().then(people => this.people = people);
     }
 
-
     gotoDetail(selectedPerson: Person) {
         if (selectedPerson) {
             this._router.navigate(['TeamDetail', { id: selectedPerson.id }]);

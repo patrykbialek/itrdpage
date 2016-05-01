@@ -14,6 +14,19 @@
                 alias pariatur animi veritatis corporis minus quia! Consequatur quia commodi sunt nostrum necessitatibus,
                 alias, sed nulla!
             </p>
+
+            <a class="link" (click)="gotoWorks()">See our works</a>
         </div>
     </div>
+
+    <h3 class="team-list-title">Our Works</h3>
+    <ul class="team-list works-list" layout="row" layout-align="center center" layout-wrap>
+        <li class="works-list__item" flex="50" *ngFor="#application of applications">
+            <div class="application-code"><span>{{application.code}}</span></div>
+            <div>
+                <h3 class="application-name">{{application.name}}</h3>
+                <p class="application-desc">{{application.description}}</p>
+            </div>
+        </li>
+    </ul>
 </section>

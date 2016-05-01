@@ -1,4 +1,4 @@
-System.register(['./person.service'], function(exports_1, context_1) {
+System.register(['./application.service', './client.service', './person.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -10,6 +10,12 @@ System.register(['./person.service'], function(exports_1, context_1) {
     }
     return {
         setters:[
+            function (application_service_1_1) {
+                exportStar_1(application_service_1_1);
+            },
+            function (client_service_1_1) {
+                exportStar_1(client_service_1_1);
+            },
             function (person_service_1_1) {
                 exportStar_1(person_service_1_1);
             }],

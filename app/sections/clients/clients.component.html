@@ -14,6 +14,25 @@
                 alias pariatur animi veritatis corporis minus quia! Consequatur quia commodi sunt nostrum necessitatibus,
                 alias, sed nulla!
             </p>
+
+            <a class="link" (click)="gotoClients()">See our clients</a>
         </div>
     </div>
+
+    <h3 class="team-list-title">Our Clients</h3>
+    <ul class="client-list team-list works-list" layout="row" layout-align="center center" layout-wrap>
+        <li class="client-list__item works-list__item" flex="100" *ngFor="#client of clients">
+            <figure class="client-logo"><img src="/images/client_logos/{{client.logo}}" alt=""></figure>
+            <div>
+                <h3 class="application-name client-name">{{client.name}}</h3>
+                <p class="appliction-desc client-desc">{{client.description}}</p>
+                <p>
+                    <a href="{{client.url}}" target="_blank" class="md-button" style="color: inherit; text-decoration: none; cursor: pointer;">
+                        <span>{{client.url}}</span>
+                        <md-icon class="material-icons" style="margin-left: 10px; vertical-align: bottom;">open_in_new</md-icon>
+                    </a>
+                </p>
+            </div>
+        </li>
+    </ul>
 </section>

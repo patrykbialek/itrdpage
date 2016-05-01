@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-translate/ng2-translate', './start/start', './sections/story/story', './sections/clients/clients', './sections/team/team', './sections/works/works', './blocks/blocks', './data/data'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-translate/ng2-translate', './start/start', './sections/story/story', './sections/clients/clients', './sections/team/team', './sections/works/works', './sections/contact/contact', './blocks/blocks', './data/data'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-trans
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, core_2, router_1, http_1, ng2_translate_1, start_1, story_1, clients_1, team_1, works_1, blocks_1, data_1;
+    var core_1, core_2, router_1, http_1, ng2_translate_1, start_1, story_1, clients_1, team_1, works_1, contact_1, blocks_1, data_1, data_2, data_3;
     var AppComponent;
     return {
         setters:[
@@ -42,11 +42,16 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-trans
             function (works_1_1) {
                 works_1 = works_1_1;
             },
+            function (contact_1_1) {
+                contact_1 = contact_1_1;
+            },
             function (blocks_1_1) {
                 blocks_1 = blocks_1_1;
             },
             function (data_1_1) {
                 data_1 = data_1_1;
+                data_2 = data_1_1;
+                data_3 = data_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -62,6 +67,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-trans
                     this.top = true;
                     this.isHidden = false;
                     this.hideTitle = false;
+                    this.hiringButtonHidden = true;
                     this.log = '';
                     // use navigator lang if available
                     var userLang = navigator.language.split('-')[0];
@@ -119,6 +125,10 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-trans
                         this.startPage = true;
                         this.hideTitle = true;
                     }
+                    this.hiringButtonHidden = true;
+                };
+                AppComponent.prototype.showHiringButton = function () {
+                    this.hiringButtonHidden = !this.hiringButtonHidden;
                 };
                 AppComponent.prototype.onScroll = function (event) {
                     if (this.isStart && scrollY > 20 && this.top === false) {
@@ -150,7 +160,9 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-trans
                             http_1.HTTP_PROVIDERS,
                             router_1.ROUTER_PROVIDERS,
                             blocks_1.EntityService,
-                            data_1.PersonService
+                            data_1.ApplicationService,
+                            data_2.ClientService,
+                            data_3.PersonService
                         ],
                         pipes: [ng2_translate_1.TranslatePipe]
                     }),
@@ -160,7 +172,8 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-trans
                         { path: 'clients', name: 'Clients', component: clients_1.ClientsComponent },
                         { path: 'team', name: 'Team', component: team_1.TeamComponent },
                         { path: 'works', name: 'Works', component: works_1.WorksComponent },
-                        { path: 'team/:id', name: 'TeamDetail', component: team_1.TeamDetailComponent }
+                        { path: 'team/:id', name: 'TeamDetail', component: team_1.TeamDetailComponent },
+                        { path: 'contact', name: 'Contact', component: contact_1.ContactComponent }
                     ]),
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [ng2_translate_1.TranslateService, router_1.Router])

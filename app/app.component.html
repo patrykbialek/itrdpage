@@ -14,6 +14,10 @@
             </a>
         </div>
         <div class="top-menu" flex="50" layout="row" layout-align="end center" style="min-height:64px;">
+            <a md-button md-ink-ripple class="top-menu__item hiring-button" aria-label="Our Story"
+            style1="display:none" [hidden]="hiringButtonHidden" [routerLink]="['Story']" (click)="gotoStory();">
+                We are hiring
+            </a>
             <a md-button md-ink-ripple class="top-menu__item" aria-label="Our Story" [routerLink]="['Story']" (click)="gotoStory();">
                 Story
             </a>
@@ -30,6 +34,19 @@
     </div>
 </md-toolbar>
 <router-outlet></router-outlet>
+
+<footer layout="row" layout-align="space-between center" class="footer-container">
+    <div class="footer-name">
+        <p (click)="showHiringButton()">2016 Medicover Group</p>
+    </div>
+    <nav class="footer-links">
+        <ul>
+            <li><a href="http://www.medicover.com">Medicover Group</a></li>
+            <li><a href="">Career</a></li>
+            <li><a [routerLink]="['Contact']">Contact us</a></li>
+        </ul>
+    </nav>
+</footer>
 
 <!--
 Copyright 2016 Medicover R&D. All Rights Reserved.

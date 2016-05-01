@@ -10,9 +10,12 @@ import { StoryComponent }   from './sections/story/story';
 import { ClientsComponent } from './sections/clients/clients';
 import { TeamComponent, TeamDetailComponent }    from './sections/team/team';
 import { WorksComponent }   from './sections/works/works';
+import { ContactComponent } from './sections/contact/contact';
 
 import { CONFIG }        from './shared/shared';
 import { EntityService } from './blocks/blocks';
+import { ApplicationService } from './data/data';
+import { ClientService } from './data/data';
 import { PersonService } from './data/data';
 
 @Component({
@@ -23,6 +26,8 @@ import { PersonService } from './data/data';
         HTTP_PROVIDERS,
         ROUTER_PROVIDERS,
         EntityService,
+        ApplicationService,
+        ClientService,
         PersonService
     ],
     pipes: [TranslatePipe]
@@ -35,7 +40,8 @@ import { PersonService } from './data/data';
     { path: 'clients', name: 'Clients', component: ClientsComponent },
     { path: 'team', name: 'Team', component: TeamComponent },
     { path: 'works', name: 'Works', component: WorksComponent },
-    { path: 'team/:id', name: 'TeamDetail', component: TeamDetailComponent }
+    { path: 'team/:id', name: 'TeamDetail', component: TeamDetailComponent },
+    { path: 'contact', name: 'Contact', component: ContactComponent }    
 ])
 
 @Injectable()
@@ -50,6 +56,8 @@ export class AppComponent implements OnInit, OnActivate {
     top: boolean = true;
     isHidden: boolean = false;
     hideTitle: boolean = false;
+
+    hiringButtonHidden: boolean = true;
 
     log: string = '';
 
@@ -121,6 +129,12 @@ export class AppComponent implements OnInit, OnActivate {
             this.startPage = true;
             this.hideTitle = true;
         }
+        
+        this.hiringButtonHidden = true;
+    }
+    
+    showHiringButton() {
+        this.hiringButtonHidden = !this.hiringButtonHidden;
     }
 
     onScroll(event) {
