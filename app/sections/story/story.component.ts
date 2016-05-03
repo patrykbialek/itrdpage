@@ -1,9 +1,9 @@
-import { Component } from 'angular2/core';
+import { Component, OnInit } from 'angular2/core';
 import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 
 //import { ClientDetailComponent }  from './client-detail.component';
-import { CONFIG }                       from '../../shared/shared';
+import { CONFIG, Scroll }                       from '../../shared/shared';
 
 let TOP = CONFIG.top;
 
@@ -13,9 +13,17 @@ let TOP = CONFIG.top;
     directives: [ROUTER_DIRECTIVES],
     pipes: [TranslatePipe]
 })
-export class StoryComponent {
+export class StoryComponent implements OnInit {
     title: string = 'Our Story';
     isHidden: boolean = false;
+
+    constructor(
+        private _scroll: Scroll
+    ) { }
+
+    ngOnInit() {
+        this._scroll.toElement();
+    }
 
     onScroll(event) {
         if (scrollY > 1 && this.isHidden === false) {

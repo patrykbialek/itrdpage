@@ -23,15 +23,6 @@ export class ClientsComponent implements OnInit {
         private _scroll: Scroll
     ) { }
 
-    onScroll(event) {
-        if (scrollY > 1 && this.isHidden === false) {
-            this.isHidden = true;
-        }
-        if (scrollY < 1 && this.isHidden === true) {
-            this.isHidden = false;
-        }
-    }
-
     getClients() {
         this._clientService.getClients().then(clients => this.clients = clients);
     }
@@ -43,6 +34,15 @@ export class ClientsComponent implements OnInit {
     ngOnInit() {
         this._scroll.toElement();
         this.getClients();
+    }
+
+    onScroll(event) {
+        if (scrollY > 1 && this.isHidden === false) {
+            this.isHidden = true;
+        }
+        if (scrollY < 1 && this.isHidden === true) {
+            this.isHidden = false;
+        }
     }
 }
 

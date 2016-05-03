@@ -1,12 +1,12 @@
-import { Component, OnInit } from 'angular2/core';
-import { ROUTER_DIRECTIVES } from 'angular2/router';
+import { Component, EventEmitter, Input, OnInit, Output } from 'angular2/core';
+import { ROUTER_DIRECTIVES, Router } from 'angular2/router';
 import { TranslatePipe } from 'ng2-translate/ng2-translate';
 
-//import { START_PAGE } from '../app/app.component'
+import { Scroll } from '../../shared/shared';  
 
 @Component({
     selector: 'itrd-start',
-    templateUrl: 'app/start/start.component.html',
+    templateUrl: 'app/sections/start/start.component.html',
     directives: [ROUTER_DIRECTIVES],
     pipes: [TranslatePipe]
 })
@@ -14,12 +14,16 @@ import { TranslatePipe } from 'ng2-translate/ng2-translate';
 export class StartComponent implements OnInit {
     startPage: boolean = false;
     title: string = 'Medicover Group IT Research & Development'
-    isHidden: boolean = false;
+    isHidden: boolean = false; 
+    
+    constructor(private _router: Router, private _scroll: Scroll) {
+    }
     
     ngOnInit() {
         this.startPage = true;
+        this._scroll.toElement();
     }
-    
+
     onScroll(event) {
         if (scrollY > 1 && this.isHidden === false) {
             this.isHidden = true;

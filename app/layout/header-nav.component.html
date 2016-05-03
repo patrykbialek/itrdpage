@@ -1,0 +1,32 @@
+<md-toolbar class="top-nav" [ngClass]="{
+    'bg-indigo':    getCurrentRoute('Start'),
+    'bg-purple':    getCurrentRoute('Story'),
+    'bg-teal':      getCurrentRoute('Clients'),
+    'bg-red':       getCurrentRoute('Team'),
+    'bg-blue-grey': getCurrentRoute('Works'),
+    'md-whiteframe-7dp': top}" (window:scroll)="onScroll($event)">
+    <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+        <div flex="50">
+            <a href="" class="app-title" [routerLink]="['Start']" [ngClass]="{'no-link': hideTitle}">
+                <h1 [ngClass]="{'hidden': hideTitle}">
+                    <img src="images/medicover_logo_white.png" alt="logo" style="width:6%;vertical-align:text-bottom;margin-right:5px;">
+                    <span>IT Research & Development</span></h1>
+            </a>
+        </div>
+        <div class="top-menu" flex="50" layout="row" layout-align="end center" style="min-height:64px;">
+
+            <a md-button class="top-menu__item" aria-label="Our Story" [routerLink]="['Story']">
+                Story
+            </a>
+            <a md-button class="top-menu__item" aria-label="Our Clients" [routerLink]="['Clients']">
+                Clients
+            </a>
+            <a md-button class="top-menu__item" aria-label="Our Works" [routerLink]="['Works']">
+                Works
+            </a>
+            <a md-button class="top-menu__item" aria-label="Our Team" [routerLink]="['Team']">
+                Team
+            </a>
+        </div>
+    </div>
+</md-toolbar>

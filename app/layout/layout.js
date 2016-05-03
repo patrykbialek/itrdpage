@@ -1,4 +1,4 @@
-System.register(['./team.component', './team-detail.component'], function(exports_1, context_1) {
+System.register(['./footer.component', './header-nav.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -10,14 +10,14 @@ System.register(['./team.component', './team-detail.component'], function(export
     }
     return {
         setters:[
-            function (team_component_1_1) {
-                exportStar_1(team_component_1_1);
+            function (footer_component_1_1) {
+                exportStar_1(footer_component_1_1);
             },
-            function (team_detail_component_1_1) {
-                exportStar_1(team_detail_component_1_1);
+            function (header_nav_component_1_1) {
+                exportStar_1(header_nav_component_1_1);
             }],
         execute: function() {
         }
     }
 });
-//# sourceMappingURL=team.js.map
+//# sourceMappingURL=layout.js.map

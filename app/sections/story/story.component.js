@@ -29,10 +29,14 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
         execute: function() {
             TOP = shared_1.CONFIG.top;
             StoryComponent = (function () {
-                function StoryComponent() {
+                function StoryComponent(_scroll) {
+                    this._scroll = _scroll;
                     this.title = 'Our Story';
                     this.isHidden = false;
                 }
+                StoryComponent.prototype.ngOnInit = function () {
+                    this._scroll.toElement();
+                };
                 StoryComponent.prototype.onScroll = function (event) {
                     if (scrollY > 1 && this.isHidden === false) {
                         this.isHidden = true;
@@ -48,7 +52,7 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
                         directives: [router_1.ROUTER_DIRECTIVES],
                         pipes: [ng2_translate_1.TranslatePipe]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [shared_1.Scroll])
                 ], StoryComponent);
                 return StoryComponent;
             }());

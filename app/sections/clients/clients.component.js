@@ -37,14 +37,6 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
                     this.title = 'Our Clients';
                     this.isHidden = false;
                 }
-                ClientsComponent.prototype.onScroll = function (event) {
-                    if (scrollY > 1 && this.isHidden === false) {
-                        this.isHidden = true;
-                    }
-                    if (scrollY < 1 && this.isHidden === true) {
-                        this.isHidden = false;
-                    }
-                };
                 ClientsComponent.prototype.getClients = function () {
                     var _this = this;
                     this._clientService.getClients().then(function (clients) { return _this.clients = clients; });
@@ -55,6 +47,14 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
                 ClientsComponent.prototype.ngOnInit = function () {
                     this._scroll.toElement();
                     this.getClients();
+                };
+                ClientsComponent.prototype.onScroll = function (event) {
+                    if (scrollY > 1 && this.isHidden === false) {
+                        this.isHidden = true;
+                    }
+                    if (scrollY < 1 && this.isHidden === true) {
+                        this.isHidden = false;
+                    }
                 };
                 ClientsComponent = __decorate([
                     core_1.Component({

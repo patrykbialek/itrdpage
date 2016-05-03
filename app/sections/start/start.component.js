@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translate'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translate', '../../shared/shared'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, ng2_translate_1;
+    var core_1, router_1, ng2_translate_1, shared_1;
     var StartComponent;
     return {
         setters:[
@@ -22,17 +22,22 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
             },
             function (ng2_translate_1_1) {
                 ng2_translate_1 = ng2_translate_1_1;
+            },
+            function (shared_1_1) {
+                shared_1 = shared_1_1;
             }],
         execute: function() {
-            //import { START_PAGE } from '../app/app.component'
             StartComponent = (function () {
-                function StartComponent() {
+                function StartComponent(_router, _scroll) {
+                    this._router = _router;
+                    this._scroll = _scroll;
                     this.startPage = false;
                     this.title = 'Medicover Group IT Research & Development';
                     this.isHidden = false;
                 }
                 StartComponent.prototype.ngOnInit = function () {
                     this.startPage = true;
+                    this._scroll.toElement();
                 };
                 StartComponent.prototype.onScroll = function (event) {
                     if (scrollY > 1 && this.isHidden === false) {
@@ -45,11 +50,11 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
                 StartComponent = __decorate([
                     core_1.Component({
                         selector: 'itrd-start',
-                        templateUrl: 'app/start/start.component.html',
+                        templateUrl: 'app/sections/start/start.component.html',
                         directives: [router_1.ROUTER_DIRECTIVES],
                         pipes: [ng2_translate_1.TranslatePipe]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [router_1.Router, shared_1.Scroll])
                 ], StartComponent);
                 return StartComponent;
             }());
