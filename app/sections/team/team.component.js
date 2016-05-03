@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translate', '../../data/data', './team-detail.component', '../../blocks/blocks'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translate', '../../data/data', './team-detail.component', '../../blocks/blocks', '../../shared/shared'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, ng2_translate_1, data_1, team_detail_component_1, blocks_1;
+    var core_1, router_1, ng2_translate_1, data_1, team_detail_component_1, blocks_1, shared_1;
     var TeamComponent;
     return {
         setters:[
@@ -31,13 +31,17 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
             },
             function (blocks_1_1) {
                 blocks_1 = blocks_1_1;
+            },
+            function (shared_1_1) {
+                shared_1 = shared_1_1;
             }],
         execute: function() {
             TeamComponent = (function () {
-                function TeamComponent(_modalService, _router, _personService) {
+                function TeamComponent(_modalService, _personService, _router, _scroll) {
                     this._modalService = _modalService;
-                    this._router = _router;
                     this._personService = _personService;
+                    this._router = _router;
+                    this._scroll = _scroll;
                     this.title = 'Our Team';
                     this.isHidden = false;
                 }
@@ -49,44 +53,12 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
                     if (selectedPerson) {
                         this._router.navigate(['TeamDetail', { id: selectedPerson.id }]);
                     }
-                    //this.detailHidden = false;
-                    //this.visible = true;
-                    // let msg = 'Are you sure you want to reset the database?';
-                    // this._modalService.activate(msg).then(responseOK => {
-                    //     if (responseOK) {
-                    //         //this._messageService.resetDb();
-                    //     }
-                    // });
                 };
                 TeamComponent.prototype.gotoTeam = function () {
-                    //scroll(0, 700);
-                    // var scrollStep = -window.scrollY / (1000 / 15),
-                    //     scrollInterval = setInterval(function() {
-                    //         if (window.scrollY >= 0) {
-                    //             window.scrollBy(0, scrollStep);
-                    //             console.log(scrollStep);
-                    //         }
-                    //         else clearInterval(scrollInterval);
-                    //     }, 15);
-                    //scrollTo(document.body, elmnt.offsetTop, 600);
-                    var duration = 600;
-                    var element = document.body;
-                    var to = 780;
-                    scrollTo(element, to, duration);
-                    function scrollTo(element, to, duration) {
-                        if (duration < 0)
-                            return;
-                        var difference = to - element.scrollTop;
-                        var perTick = difference / duration * 15;
-                        setTimeout(function () {
-                            element.scrollTop = element.scrollTop + perTick;
-                            if (element.scrollTop === to)
-                                return;
-                            scrollTo(element, to, duration - 15);
-                        }, 15);
-                    }
+                    this._scroll.toElement(740, 500);
                 };
                 TeamComponent.prototype.ngOnInit = function () {
+                    this._scroll.toElement();
                     this.getPeople();
                 };
                 TeamComponent.prototype.onScroll = function (event) {
@@ -109,7 +81,7 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
                         providers: [blocks_1.ModalService],
                         pipes: [ng2_translate_1.TranslatePipe]
                     }), 
-                    __metadata('design:paramtypes', [blocks_1.ModalService, router_1.Router, data_1.PersonService])
+                    __metadata('design:paramtypes', [blocks_1.ModalService, data_1.PersonService, router_1.Router, shared_1.Scroll])
                 ], TeamComponent);
                 return TeamComponent;
             }());

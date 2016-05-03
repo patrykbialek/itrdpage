@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-translate/ng2-translate', './start/start', './sections/story/story', './sections/clients/clients', './sections/team/team', './sections/works/works', './sections/contact/contact', './blocks/blocks', './data/data'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-translate/ng2-translate', './start/start', './sections/story/story', './sections/clients/clients', './sections/team/team', './sections/works/works', './sections/contact/contact', './blocks/blocks', './data/data', './shared/shared'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-trans
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, core_2, router_1, http_1, ng2_translate_1, start_1, story_1, clients_1, team_1, works_1, contact_1, blocks_1, data_1, data_2, data_3;
+    var core_1, core_2, router_1, http_1, ng2_translate_1, start_1, story_1, clients_1, team_1, works_1, contact_1, blocks_1, data_1, data_2, data_3, shared_1;
     var AppComponent;
     return {
         setters:[
@@ -52,6 +52,9 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-trans
                 data_1 = data_1_1;
                 data_2 = data_1_1;
                 data_3 = data_1_1;
+            },
+            function (shared_1_1) {
+                shared_1 = shared_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -162,7 +165,8 @@ System.register(['angular2/core', 'angular2/router', 'angular2/http', 'ng2-trans
                             blocks_1.EntityService,
                             data_1.ApplicationService,
                             data_2.ClientService,
-                            data_3.PersonService
+                            data_3.PersonService,
+                            shared_1.Scroll
                         ],
                         pipes: [ng2_translate_1.TranslatePipe]
                     }),

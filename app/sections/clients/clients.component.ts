@@ -5,6 +5,7 @@ import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 //import { ClientDetailComponent }  from './client-detail.component';
 import { Client } from '../../data/entities/client.ts';
 import { ClientService } from '../../data/data';
+import { Scroll } from '../../shared/shared';
 
 @Component({
     selector: 'itrd-clients',
@@ -18,7 +19,8 @@ export class ClientsComponent implements OnInit {
     isHidden: boolean = false;
 
     constructor(
-        private _clientService: ClientService
+        private _clientService: ClientService,
+        private _scroll: Scroll
     ) { }
 
     onScroll(event) {
@@ -33,29 +35,13 @@ export class ClientsComponent implements OnInit {
     getClients() {
         this._clientService.getClients().then(clients => this.clients = clients);
     }
-    
+
     gotoClients() {
-        var duration = 600;
-        var element = document.body;
-        var to = 780;
-        scrollTo(element, to, duration);
-
-        function scrollTo(element, to, duration) {
-
-            if (duration < 0) return;
-            var difference = to - element.scrollTop;
-            var perTick = difference / duration * 15;
-
-            setTimeout(function() {
-                element.scrollTop = element.scrollTop + perTick;
-                if (element.scrollTop === to) return;
-                scrollTo(element, to, duration - 15);
-            }, 15);
-
-        }
+        this._scroll.toElement(740, 500);
     }
-    
+
     ngOnInit() {
+        this._scroll.toElement();
         this.getClients();
     }
 }

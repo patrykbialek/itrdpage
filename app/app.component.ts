@@ -17,6 +17,7 @@ import { EntityService } from './blocks/blocks';
 import { ApplicationService } from './data/data';
 import { ClientService } from './data/data';
 import { PersonService } from './data/data';
+import { Scroll } from './shared/shared';
 
 @Component({
     selector: 'itrd-app',
@@ -28,7 +29,8 @@ import { PersonService } from './data/data';
         EntityService,
         ApplicationService,
         ClientService,
-        PersonService
+        PersonService,
+        Scroll
     ],
     pipes: [TranslatePipe]
 })

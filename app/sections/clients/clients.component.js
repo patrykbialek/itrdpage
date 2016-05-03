@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translate', '../../data/data'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translate', '../../data/data', '../../shared/shared'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, ng2_translate_1, data_1;
+    var core_1, router_1, ng2_translate_1, data_1, shared_1;
     var ClientsComponent;
     return {
         setters:[
@@ -25,11 +25,15 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
             },
             function (data_1_1) {
                 data_1 = data_1_1;
+            },
+            function (shared_1_1) {
+                shared_1 = shared_1_1;
             }],
         execute: function() {
             ClientsComponent = (function () {
-                function ClientsComponent(_clientService) {
+                function ClientsComponent(_clientService, _scroll) {
                     this._clientService = _clientService;
+                    this._scroll = _scroll;
                     this.title = 'Our Clients';
                     this.isHidden = false;
                 }
@@ -46,24 +50,10 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
                     this._clientService.getClients().then(function (clients) { return _this.clients = clients; });
                 };
                 ClientsComponent.prototype.gotoClients = function () {
-                    var duration = 600;
-                    var element = document.body;
-                    var to = 780;
-                    scrollTo(element, to, duration);
-                    function scrollTo(element, to, duration) {
-                        if (duration < 0)
-                            return;
-                        var difference = to - element.scrollTop;
-                        var perTick = difference / duration * 15;
-                        setTimeout(function () {
-                            element.scrollTop = element.scrollTop + perTick;
-                            if (element.scrollTop === to)
-                                return;
-                            scrollTo(element, to, duration - 15);
-                        }, 15);
-                    }
+                    this._scroll.toElement(740, 500);
                 };
                 ClientsComponent.prototype.ngOnInit = function () {
+                    this._scroll.toElement();
                     this.getClients();
                 };
                 ClientsComponent = __decorate([
@@ -73,7 +63,7 @@ System.register(['angular2/core', 'angular2/router', 'ng2-translate/ng2-translat
                         directives: [router_1.ROUTER_DIRECTIVES],
                         pipes: [ng2_translate_1.TranslatePipe]
                     }), 
-                    __metadata('design:paramtypes', [data_1.ClientService])
+                    __metadata('design:paramtypes', [data_1.ClientService, shared_1.Scroll])
                 ], ClientsComponent);
                 return ClientsComponent;
             }());

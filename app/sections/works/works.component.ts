@@ -5,6 +5,7 @@ import { TranslateService, TranslatePipe } from 'ng2-translate/ng2-translate';
 //import { ClientDetailComponent }  from './client-detail.component';
 import { Application } from '../../data/entities/application.ts';
 import { ApplicationService } from '../../data/data';
+import { Scroll } from '../../shared/shared';
 
 @Component({
     selector: 'itrd-works',
@@ -18,7 +19,8 @@ export class WorksComponent implements OnInit {
     isHidden: boolean = false;
 
     constructor(
-        private _applicationService: ApplicationService
+        private _applicationService: ApplicationService,
+        private _scroll: Scroll
     ) { }
 
     onScroll(event) {
@@ -35,24 +37,7 @@ export class WorksComponent implements OnInit {
     }
 
     gotoWorks() {
-        var duration = 600;
-        var element = document.body;
-        var to = 780;
-        scrollTo(element, to, duration);
-
-        function scrollTo(element, to, duration) {
-
-            if (duration < 0) return;
-            var difference = to - element.scrollTop;
-            var perTick = difference / duration * 15;
-
-            setTimeout(function() {
-                element.scrollTop = element.scrollTop + perTick;
-                if (element.scrollTop === to) return;
-                scrollTo(element, to, duration - 15);
-            }, 15);
-
-        }
+        this._scroll.toElement(740, 500);
     }
 
     ngOnInit() {

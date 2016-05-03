@@ -7,6 +7,7 @@ import { PersonService } from '../../data/data';
 import { TeamDetailComponent } from './team-detail.component'
 
 import { EntityService, ModalComponent, ModalService } from '../../blocks/blocks';
+import { Scroll } from '../../shared/shared';
 
 @Component({
     selector: 'itrd-team',
@@ -25,8 +26,10 @@ export class TeamComponent implements OnInit {
 
     constructor(
         private _modalService: ModalService,
+        private _personService: PersonService,
         private _router: Router,
-        private _personService: PersonService) { }
+        private _scroll: Scroll
+    ) { }
 
     getPeople() {
         this._personService.getPeople().then(people => this.people = people);
@@ -36,49 +39,14 @@ export class TeamComponent implements OnInit {
         if (selectedPerson) {
             this._router.navigate(['TeamDetail', { id: selectedPerson.id }]);
         }
-        //this.detailHidden = false;
-        //this.visible = true;
-        // let msg = 'Are you sure you want to reset the database?';
-        // this._modalService.activate(msg).then(responseOK => {
-        //     if (responseOK) {
-        //         //this._messageService.resetDb();
-        //     }
-        // });
     }
 
     gotoTeam() {
-        //scroll(0, 700);
-
-        // var scrollStep = -window.scrollY / (1000 / 15),
-        //     scrollInterval = setInterval(function() {
-        //         if (window.scrollY >= 0) {
-        //             window.scrollBy(0, scrollStep);
-        //             console.log(scrollStep);
-        //         }
-        //         else clearInterval(scrollInterval);
-        //     }, 15);
-        //scrollTo(document.body, elmnt.offsetTop, 600);
-        var duration = 600;
-        var element = document.body;
-        var to = 780;
-        scrollTo(element, to, duration);
-
-        function scrollTo(element, to, duration) {
-
-            if (duration < 0) return;
-            var difference = to - element.scrollTop;
-            var perTick = difference / duration * 15;
-
-            setTimeout(function() {
-                element.scrollTop = element.scrollTop + perTick;
-                if (element.scrollTop === to) return;
-                scrollTo(element, to, duration - 15);
-            }, 15);
-
-        }
+        this._scroll.toElement(740, 500);
     }
 
     ngOnInit() {
+        this._scroll.toElement();
         this.getPeople();
     }
 
